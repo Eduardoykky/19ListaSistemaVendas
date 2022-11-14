@@ -151,3 +151,33 @@ function OrdernarAvaliacao() {
     }
 }
 
+function ExcluirProduto() {
+    
+    suporteNome = []
+    supID = []
+    supPreco = []
+    supAva = []
+
+    var deletar = parseInt(prompt("Insira um Id para deletar o produto."))
+
+    for (var index = 0; index < ids.length; index++) {
+        if (deletar == ids[index]) {
+           ids[index] = 0
+        }
+    }
+    for (var index1 = 0; index1 < ids.length; index1++) {
+        if (ids[index1] != 0) {
+            supID[indexSup] = ids[index1]
+            suporteNome[indexSup] = nomes[index1]
+            supPreco[indexSup] = precos[index1]
+            supAva[indexSup] = avaliacoes[index1]
+            indexSup++
+        }
+    }
+    avaliacoes = supAva
+    precos = supPreco
+    ids = supID
+    nomes = suporteNome
+    indexSup = 0
+    index = index - 1
+}
