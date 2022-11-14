@@ -23,3 +23,11 @@ function ProcurarID(id) {
         }
     }   
 }
+
+function ProcurarNome(nome) {
+    for (var i = 0; i < nomes.length; i++) {
+        if(nome == nomes[i]){
+            console.log("O produto com o nome ", nome, " tem ID: ", ids[i])
+        }
+    }   
+}
