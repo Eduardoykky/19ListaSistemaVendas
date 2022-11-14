@@ -25,20 +25,19 @@ function Cadastrar() {
 
 function ProcurarID(id) {
     for (var i = 0; i < ids.length; i++) {
-        if(id == ids[i]){
-            console.log("O produto de id " + id + " tem o nome " + nomes[i] + " tem o preço R$ " + precos[i] + " e tem a avaliação " + avaliacoes[i])
+        if(nome == nomes[i]){
+            console.log("O produto com o nome ", nomes[i], " tem ID: ", ids[i], " preço ", " R$ ", " e avaliação: ", avaliacoes[i])
         }
     }   
 }
 
 function ProcurarNome(nome) {
     for (var i = 0; i < nomes.length; i++) {
-        if(nome == nomes[i]){
-            console.log("O produto com o nome ", nome, " tem ID: ", ids[i])
+        if(infoNome == nomes[i]){
+            console.log("O produto com o nome ", nomes[i], " tem ID: ", ids[i], " preço ", " R$ ", " e avaliação: ", avaliacoes[i])
         }
     }   
 }
-
 var maiorId = 0
 
 function OrdernarIds() {
