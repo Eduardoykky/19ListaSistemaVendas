@@ -151,6 +151,14 @@ function OrdernarAvaliacao() {
     }
 }
 
+function AtualizarPreco(id, novoValor) {
+    for (var index = 0; index < ids.length; index++) {
+        if(id == ids[index]){
+            precos[index] = novoValor
+        }
+    }
+}
+
 function ExcluirProduto() {
     
     suporteNome = []
