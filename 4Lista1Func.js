@@ -6,6 +6,13 @@ var avaliacoes = []
 var index = 0
 var indexId = 0
 
+var menorPreco = 0
+var supPreco = []
+var suporteNome = []
+var supID = []
+var supAva = []
+var indexSup = 0
+
 function Cadastrar() {
     ids[index] = indexId + 1
     nomes[index] = prompt("Insira o nome do produto ")
@@ -67,5 +74,41 @@ function OrdernarIds() {
 
     for (var index = 0; index < ids.length; index++) {
         console.log(ids[index], nomes[index], precos[index], avaliacoes[index])
+    }
+}
+
+function OrdernarPreço() {
+    
+    suporteNome = []
+    supID = []
+    supPreco = []
+    supAva = []
+
+    for (var index = 0; index < precos.length; index++) {
+        menorPreco = precos[index]
+        for (var index1 = 0; index1 < precos.length; index1++) {
+            if (precos[index1] < menorPreco) {
+                menorPreco = precos[index1]
+            }
+        }
+        for (var index2 = 0; index2 < precos.length; index2++) {
+            if (menorPreco == precos[index2]) {
+                supPreco[index] = precos[index2]
+                supID[index] = ids[index2]
+                suporteNome[index] = nomes[index2]
+                supAva[index] = avaliacoes[index2]
+                precos[index2] = 99999999
+            }
+        }
+    }
+    console.log(suporteNome, supID, supAva, supPreco)
+    precos = supPreco
+    ids = supID
+    nomes = supID
+    avaliacoes = supAva
+
+    for (var contador = 0; contador < ids.length; contador++) {
+        console.log(ids[contador], nomes[contador], precos[contador], avaliacoes[contador])
+        
     }
 }
