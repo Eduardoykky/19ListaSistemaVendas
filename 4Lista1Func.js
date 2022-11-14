@@ -181,3 +181,55 @@ function ExcluirProduto() {
     indexSup = 0
     index = index - 1
 }
+
+var continuar = true
+while (continuar) {
+    var opcao = prompt("Insira a opção que deseja executar 1 - Cadastro, 2 - Buscar por ID, 3 - Buscar por nome, 4 - Ordernar por ID, 5 - Ordernar por preço, 6 - Ordernar por Avaliação, 7 - Atualizar Preço e 8 Excluir Produto.")
+
+    if (opcao == "1") {
+
+        Cadastrar()
+        console.log("Produto cadastrado com sucesso") 
+
+    }else if (opcao == "2"){
+
+        var id = parseInt(prompt("Insira um id para pesquisar."))
+        ProcurarID(id)
+
+    }else if(opcao == "3"){
+
+        var nome = prompt("Insira o nome para pesquisar")
+        ProcurarNome(nome)
+
+    }else if(opcao == "4"){
+
+        OrdernarIds()
+
+    }else if (opcao == "5"){
+
+        OrdernarPreço()
+
+    }else if (opcao == "6"){
+
+        OrdernarAvaliacao()
+
+    }else if (opcao == "7"){
+
+        var id = parseInt(prompt("Insira o ID do produto que deseja atualizar."))
+        var valor = parseInt(prompt("Insira o novo valor para o produto."))
+        AtualizarPreco(id, valor)
+        console.log("Preço atualizado com sucesso!")
+        
+    }else {
+
+        ExcluirProduto()
+        console.log("Produto excluido com sucesso")
+
+    }
+    
+    var opcaoContinuar = prompt("Deseja continuar? s ou n")
+
+    if (opcaoContinuar != "s") {
+        continuar = false
+    }
+}
