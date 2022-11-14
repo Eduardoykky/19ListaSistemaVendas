@@ -112,3 +112,41 @@ function OrdernarPreço() {
         
     }
 }
+
+var menorAVA = 0
+
+function OrdernarAvaliacao() {
+    
+    suporteNome = []
+    supID = []
+    supPreco = []
+    supAva = []
+
+    for (var contador = 0; contador < avaliacoes.length; contador++) {
+        menorAVA = 99999999
+        for (var contador2 = 0; contador2 < avaliacoes.length; contador2++) {
+            if (avaliacoes[contador2] < menorAVA) {
+                menorAVA = avaliacoes[contador2]
+            }
+        }
+        var contador4 = 0
+        for (var contador3 = 0; contador3 < avaliacoes.length; contador3++) {
+            if (menorAVA == avaliacoes[contador3] && contador4 == 0) {
+                supAva[contador] = avaliacoes[contador3]
+                supID[contador] = ids[contador3]
+                suporteNome[contador] = nomes[contador3]
+                supPreco[contador] = precos[contador3]
+                avaliacoes[contador3] = 99999999
+                contador4++
+            }
+        }
+    }
+    avaliacoes = supAva
+    precos = supPreco
+    ids = supID
+    nomes = suporteNome
+
+    for (var index = 0; index < ids.length; index++) {
+        console.log(ids[index], nomes[index], precos[index], avaliacoes[index])
+    }
+}
