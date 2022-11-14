@@ -16,3 +16,10 @@ function Cadastrar() {
     indexId++
 }
 
+function ProcurarID(id) {
+    for (var i = 0; i < ids.length; i++) {
+        if(id == ids[i]){
+            console.log("O produto de id " + id + " tem o nome " + nomes[i] + " tem o preço R$ " + precos[i] + " e tem a avaliação " + avaliacoes[i])
+        }
+    }   
+}
