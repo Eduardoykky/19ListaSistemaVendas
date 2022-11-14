@@ -150,3 +150,4 @@ function OrdernarAvaliacao() {
         console.log(ids[index], nomes[index], precos[index], avaliacoes[index])
     }
 }
+
